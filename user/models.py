@@ -35,7 +35,7 @@ class ContactMe(models.Model):
     message = models.TextField()
 
 
-class Tesimonial(models.Model):
+class Testimonial(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to='profiles',
                               default='testimonial/avatar.svg')
     name = models.CharField(max_length=150)
