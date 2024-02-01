@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Profile, Contact, Skills, ContactMe, Testimonial, Project, ProjectCategory, Service, ServiceCategory, Blog, BlogCategory
+from .models import (Profile, Contact, Skills, ContactMe, Testimonial,
+                     Project, ProjectCategory, Service, ServiceCategory,
+                     Blog, BlogCategory)
 
 
 class ContactSerializer(serializers.ModelSerializer):

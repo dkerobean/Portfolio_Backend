@@ -84,8 +84,3 @@ class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='blog')
-
-
-
-
-
