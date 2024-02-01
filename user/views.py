@@ -1,9 +1,14 @@
 from rest_framework import viewsets
 from .serializers import (ProfileSerializer, ContactSerializer,
                           SkillSerializer, ContactMeSerializer,
-                          TestimonialSerializer)
+                          TestimonialSerializer, ProjectSerializer,
+                          ProjectCategorySerializer, ServiceSerializer,
+                          ServiceCategorySerializer, BlogSerializer,
+                          BlogCategorySerializer)
 
-from .models import Profile, Contact, Skills, ContactMe, Testimonial
+from .models import (Profile, Contact, Skills, ContactMe, Testimonial,
+                     Project, ProjectCategory, Service, ServiceCategory,
+                     Blog, BlogCategory)
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
@@ -29,3 +34,33 @@ class TestimonialViewSet(viewsets.ModelViewSet):
 class ContactMeViewSet(viewsets.ModelViewSet):
     queryset = ContactMe.objects.all()
     serializer_class = ContactMeSerializer
+
+
+class ProjectCategoryViewSet(viewsets.ModelViewSet):
+    queryset = ProjectCategory.objects.all()
+    serializer_class = ProjectCategorySerializer
+
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+
+class ServiceCategoryViewSet(viewsets.ModelViewSet):
+    queryset = ServiceCategory.objects.all()
+    serializer_class = ServiceCategorySerializer
+
+
+class ServiceViewSet(viewsets.ModelViewSet):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+
+
+class BlogCategoryViewSet(viewsets.ModelViewSet):
+    queryset = BlogCategory.objects.all()
+    serializer_class = BlogCategorySerializer
+
+
+class BlogViewSet(viewsets.ModelViewSet):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
