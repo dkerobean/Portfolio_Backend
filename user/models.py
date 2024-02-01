@@ -1,16 +1,6 @@
 from django.db import models
 
 
-class Profile(models.Model):
-    name = models.CharField(max_length=10)
-    title = models.CharField(max_length=100)
-    about_me = models.TextField()
-    experience = models.IntegerField()
-    completed_project = models.IntegerField()
-    image = models.ImageField(null=True, blank=True, upload_to='profiles',
-                              default='profiles/avatar.svg')
-
-
 class Contact(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=50)
@@ -21,6 +11,16 @@ class Contact(models.Model):
     github = models.CharField(max_length=150)
     instagram = models.CharField(max_length=150)
     google_location = models.CharField(max_length=150)
+
+
+class Profile(models.Model):
+    name = models.CharField(max_length=10)
+    title = models.CharField(max_length=100)
+    about_me = models.TextField()
+    experience = models.IntegerField()
+    completed_project = models.IntegerField()
+    image = models.ImageField(null=True, blank=True, upload_to='profiles',
+                              default='profiles/avatar.svg')
 
 
 class Skills(models.Model):
