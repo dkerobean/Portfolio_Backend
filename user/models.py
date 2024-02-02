@@ -14,7 +14,8 @@ class Contact(models.Model):
 
 
 class Profile(models.Model):
-    name = models.CharField(max_length=10)
+    first_name = models.CharField(max_length=10)
+    last_name = models.CharField(max_length=10)
     title = models.CharField(max_length=100)
     about_me = models.TextField()
     experience = models.IntegerField()
