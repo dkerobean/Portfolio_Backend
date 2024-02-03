@@ -12,6 +12,9 @@ class Contact(models.Model):
     instagram = models.CharField(max_length=150)
     google_location = models.CharField(max_length=150)
 
+    def __str__(self):
+        return self.email
+
 
 class Profile(models.Model):
     first_name = models.CharField(max_length=10)
@@ -23,9 +26,15 @@ class Profile(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to='profiles',
                               default='profiles/avatar.svg')
 
+    def __str__(self):
+        return self.first_name
+
 
 class SkillCategory(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Skills(models.Model):
@@ -33,12 +42,18 @@ class Skills(models.Model):
     description = models.CharField(max_length=150)
     category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class ContactMe(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     subject = models.CharField(max_length=50)
     message = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Testimonial(models.Model):
@@ -48,9 +63,15 @@ class Testimonial(models.Model):
     position = models.CharField(max_length=150)
     testimonial = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class ProjectCategory(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Project(models.Model):
@@ -64,9 +85,15 @@ class Project(models.Model):
     image2 = models.ImageField(null=True, blank=True, upload_to='projetcts')
     link2 = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
+
 
 class ServiceCategory(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Service(models.Model):
@@ -74,9 +101,15 @@ class Service(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
+
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Blog(models.Model):
@@ -85,3 +118,6 @@ class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='blog')
+
+    def __str__(self):
+        return self.title
