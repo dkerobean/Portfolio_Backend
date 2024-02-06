@@ -69,6 +69,8 @@ class BlogCategorySerializer(serializers.ModelSerializer):
 
 
 class BlogSerializer(serializers.ModelSerializer):
+    category = BlogCategorySerializer()
+    
     class Meta:
         model = Blog
         fields = '__all__'

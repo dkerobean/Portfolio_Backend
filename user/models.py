@@ -80,8 +80,8 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     year = models.IntegerField()
-    technology = models.CharField(max_length=10)
-    url = models.CharField(max_length=10)
+    technology = models.CharField(max_length=50)
+    url = models.CharField(max_length=50)
     image2 = models.ImageField(null=True, blank=True, upload_to='projetcts')
     link2 = models.CharField(max_length=100)
 
@@ -118,6 +118,7 @@ class Blog(models.Model):
     date = models.DateField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='blog')
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
