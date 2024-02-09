@@ -40,7 +40,6 @@ class SkillCategory(models.Model):
 class Skills(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=150)
-    category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
