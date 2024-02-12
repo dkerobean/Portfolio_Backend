@@ -121,3 +121,10 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CvLink(models.Model):
+    url = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.url

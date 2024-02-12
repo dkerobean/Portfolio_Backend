@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import (Profile, Contact, Skills, ContactMe, Testimonial,
                      Project, ProjectCategory, Service, ServiceCategory,
-                     Blog, BlogCategory)
+                     Blog, BlogCategory, CvLink)
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -70,7 +70,13 @@ class BlogCategorySerializer(serializers.ModelSerializer):
 
 class BlogSerializer(serializers.ModelSerializer):
     category = BlogCategorySerializer()
-    
+
     class Meta:
         model = Blog
+        fields = '__all__'
+
+
+class CvSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CvLink
         fields = '__all__'

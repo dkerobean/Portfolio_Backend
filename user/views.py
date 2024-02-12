@@ -4,11 +4,11 @@ from .serializers import (ProfileSerializer, ContactSerializer,
                           TestimonialSerializer, ProjectSerializer,
                           ProjectCategorySerializer, ServiceSerializer,
                           ServiceCategorySerializer, BlogSerializer,
-                          BlogCategorySerializer)
+                          BlogCategorySerializer, CvSerializer)
 
 from .models import (Profile, Contact, Skills, ContactMe, Testimonial,
                      Project, ProjectCategory, Service, ServiceCategory,
-                     Blog, BlogCategory)
+                     Blog, BlogCategory, CvLink)
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
@@ -64,3 +64,8 @@ class BlogCategoryViewSet(viewsets.ModelViewSet):
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+
+
+class CvViewSet(viewsets.ModelViewSet):
+    queryset = CvLink.objects.all()
+    serializer_class = CvSerializer

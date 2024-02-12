@@ -14,6 +14,7 @@ router.register(r'service-category', views.ServiceCategoryViewSet, basename='ser
 router.register(r'service', views.ServiceViewSet, basename='service')
 router.register(r'blog-category', views.BlogCategoryViewSet, basename='blog-category')
 router.register(r'blog', views.BlogViewSet, basename='blog')
+router.register(r'cv', views.CvViewSet, basename='cv')
 
 urlpatterns = [
     path('api/', include(router.urls)),
