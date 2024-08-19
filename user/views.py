@@ -9,6 +9,7 @@ from .serializers import (ProfileSerializer, ContactSerializer,
 from .models import (Profile, Contact, Skills, ContactMe, Testimonial,
                      Project, ProjectCategory, Service, ServiceCategory,
                      Blog, BlogCategory, CvLink)
+from .pagination import BlogPagination
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
@@ -64,6 +65,7 @@ class BlogCategoryViewSet(viewsets.ModelViewSet):
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+    pagination_class = BlogPagination
 
 
 class CvViewSet(viewsets.ModelViewSet):
