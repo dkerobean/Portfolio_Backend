@@ -10,9 +10,6 @@ from .models import (Profile, Contact, Skills, ContactMe, Testimonial,
                      Project, ProjectCategory, Service, ServiceCategory,
                      Blog, BlogCategory, CvLink)
 
-from rest_framework.pagination import PageNumberPagination
-
-
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
