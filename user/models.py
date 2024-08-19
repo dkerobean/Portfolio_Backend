@@ -39,7 +39,7 @@ class SkillCategory(models.Model):
 
 class Skills(models.Model):
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=150)
+    description = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
@@ -98,7 +98,7 @@ class ServiceCategory(models.Model):
 class Service(models.Model):
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=150)
 
     def __str__(self):
         return self.title
